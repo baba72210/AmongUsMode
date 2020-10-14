@@ -21,10 +21,10 @@ public class CommandTest implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
-		Player player = (Player)sender;
 
 
 		if(sender instanceof Player) {
+			Player player = (Player)sender;
 			//épée impostor ONE SHOT
 			if(cmd.getName().equalsIgnoreCase("impostor") ) {
 				String name = player.getName();
@@ -133,31 +133,31 @@ public class CommandTest implements CommandExecutor {
 				impostors.add(crewMates.get(numImpostor));
 				crewMates.remove(numImpostor);
 			}
-		}
 
-		//commande de test team
-		if(cmd.getName().equalsIgnoreCase("teamcheck")) {
-			player.sendMessage("OnlinePlayers:");
-			for(Player p : onlinePlayers) {
-				player.sendMessage(p.getName());
+
+			//commande de test team
+			if(cmd.getName().equalsIgnoreCase("teamcheck")) {
+				player.sendMessage("OnlinePlayers:");
+				for(Player p : onlinePlayers) {
+					player.sendMessage(p.getName());
+				}
+				player.sendMessage("impostors:");
+				for(Player p : impostors) {
+					player.sendMessage(p.getName());
+				}
+				player.sendMessage("crewmates:");
+				for(Player p : crewMates) {
+					player.sendMessage(p.getName());
+				}
+				return true;
 			}
-			player.sendMessage("impostors:");
-			for(Player p : impostors) {
-				player.sendMessage(p.getName());
+
+
+			if(cmd.getName().equalsIgnoreCase("test")) {
+				player.sendMessage("Bravo tu as réussi le test");
+				return true;
 			}
-			player.sendMessage("crewmates:");
-			for(Player p : crewMates) {
-				player.sendMessage(p.getName());
-			}
-			return true;
 		}
-
-
-		 if(cmd.getName().equalsIgnoreCase("test")) {
-			player.sendMessage("Bravo tu as réussi le test");
-			return true;
-		}
-
 		return false;
 	}
 }
