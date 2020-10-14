@@ -14,8 +14,8 @@ public class CommandTest implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
-		
-		
+
+
 		//épée impostor ONE SHOT
 		if(cmd.getName().equalsIgnoreCase("impostor") && sender instanceof Player) {
 			Player player = (Player)sender;
@@ -33,8 +33,11 @@ public class CommandTest implements CommandExecutor {
 			player.updateInventory();
 			return true;
 		}
-		
-		sender.sendMessage("Bravo tu as réussi le test");
+
+		else if(cmd.getName().equalsIgnoreCase("test")) {
+			sender.sendMessage("Bravo tu as réussi le test");
+			return true;
+		}
 		return false;
 	}
 
