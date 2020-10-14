@@ -2,6 +2,8 @@ package fr.charly.amongusmode;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import fr.charly.amongusmode.commands.CommandTest;
+
 public class Main extends JavaPlugin {
 	
 	/*
@@ -9,7 +11,8 @@ public class Main extends JavaPlugin {
 	 */
 	@Override
 	public void onEnable() {
-		System.out.println("Plug ON");
+		System.out.println("Le Serveur vient de s'allumer");
+		getCommand("test").setExecutor(new CommandTest());
 	}
 	@Override
 	public void onDisable() {
