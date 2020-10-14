@@ -4,11 +4,9 @@ author: Charly #Auteur du plugin
 version: 1.0 #Version du plugin
 dependecies: #de quel plugin il dependra, dans notre cas, nous n'allons utiliser aucun autre plugin...
 commands: 
-
   test:
     description: ceci est un test
-    permission: test.use
-    
+    permission: test.use   
   impostor:
     description: Clear puis give dans l'inventaire l'épée de l'impostor
     permission: imp.use
