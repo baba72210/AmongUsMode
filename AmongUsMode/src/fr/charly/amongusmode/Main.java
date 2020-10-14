@@ -21,8 +21,4 @@ public class Main extends JavaPlugin {
 		System.out.println("Plug OFF");
 	}
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> branch 'master' of https://github.com/baba72210/AmongUsMode.git
 }
