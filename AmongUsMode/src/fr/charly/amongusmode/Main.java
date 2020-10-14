@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.charly.amongusmode.commands.CommandTest;
 
 public class Main extends JavaPlugin {
+<<<<<<< Upstream, based on branch 'master' of https://github.com/baba72210/AmongUsMode.git
 	
 	/*
 	 * Messages au lancement et fin du plugin
@@ -20,4 +21,8 @@ public class Main extends JavaPlugin {
 	}
 	
 	
+=======
+
+
+>>>>>>> c25bf25 idk
 }
