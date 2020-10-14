@@ -56,7 +56,8 @@ public class CommandTest implements CommandExecutor {
 				//Définition des attributs
 				impSwordM.setUnbreakable(true);
 				impSwordM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
-				impSwordM.setDisplayName("§4KILL");
+				impSwordM.setDisplayName("Kill");
+				
 				impSwordM.addEnchant(Enchantment.DAMAGE_ALL, 200, true);
 				impSwordM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 

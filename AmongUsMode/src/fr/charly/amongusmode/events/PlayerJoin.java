@@ -24,6 +24,9 @@ public class PlayerJoin implements Listener {
 		p.setCollidable(false);
 		//Clear son inventaire
 		//p.getInventory().clear();
+		//Enlève le besoin de se nourrir
+		p.setSaturation(9999);
+		p.setExhaustion(9999);
 	}	
 	@EventHandler
 	public void onLeave(PlayerQuitEvent e) {
