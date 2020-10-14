@@ -17,6 +17,13 @@ public class PlayerJoin implements Listener {
 		e.setJoinMessage("Bienvenue sur le serveur");
 		
 		CommandTest.onlinePlayers.add(p);
+		
+		//Ne peut pas prendre d'item
+		p.setCanPickupItems(false);
+		//N'as pas de collisions
+		p.setCollidable(false);
+		//Clear son inventaire
+		//p.getInventory().clear();
 	}	
 	@EventHandler
 	public void onLeave(PlayerQuitEvent e) {

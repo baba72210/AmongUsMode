@@ -36,14 +36,12 @@ public class CommandTest implements CommandExecutor {
 				//Création du sabotage du réacteur
 				ItemStack impReact = new ItemStack(Material.TNT);
 				//Création du sabotage des lights
-				ItemStack impLight = new ItemStack(Material.LEGACY_REDSTONE_TORCH_ON);
+				ItemStack impLight = new ItemStack(Material.LEGACY_REDSTONE_LAMP_ON);
 				//Création du sabotage des portes
 				ItemStack impDoor1 = new ItemStack(Material.IRON_DOOR);
 				ItemStack impDoor2 = new ItemStack(Material.OAK_DOOR);
 				ItemStack impDoor3 = new ItemStack(Material.SPRUCE_DOOR);
 				ItemStack impDoor4 = new ItemStack(Material.JUNGLE_DOOR);
-				//Création du réport
-				ItemStack report = new ItemStack(Material.LEGACY_REDSTONE_LAMP_OFF);
 
 				//Création des attributs
 				ItemMeta impSwordM = impSword.getItemMeta();
@@ -54,7 +52,6 @@ public class CommandTest implements CommandExecutor {
 				ItemMeta impDoor2M = impDoor2.getItemMeta();
 				ItemMeta impDoor3M = impDoor3.getItemMeta();
 				ItemMeta impDoor4M = impDoor4.getItemMeta();
-				ItemMeta reportM = report.getItemMeta();
 
 				//Définition des attributs
 				impSwordM.setUnbreakable(true);
@@ -91,9 +88,6 @@ public class CommandTest implements CommandExecutor {
 				impDoor4M.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
 				impDoor4M.setDisplayName("Lock Storage");
 
-				reportM.setUnbreakable(true);
-				reportM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
-				reportM.setDisplayName("Report");
 				//Ajout des attributs
 				impSword.setItemMeta(impSwordM);
 				impComm.setItemMeta(impCommM);
@@ -103,7 +97,7 @@ public class CommandTest implements CommandExecutor {
 				impDoor2.setItemMeta(impDoor2M);
 				impDoor3.setItemMeta(impDoor3M);
 				impDoor4.setItemMeta(impDoor4M);
-				report.setItemMeta(reportM);
+				
 				//Clear et ajout des objets en main
 				player.getInventory().clear();
 				player.getInventory().addItem(impSword);
@@ -114,7 +108,6 @@ public class CommandTest implements CommandExecutor {
 				player.getInventory().addItem(impDoor2);
 				player.getInventory().addItem(impDoor3);
 				player.getInventory().addItem(impDoor4);
-				player.getInventory().addItem(report);
 				player.updateInventory();
 				return true;
 			}
