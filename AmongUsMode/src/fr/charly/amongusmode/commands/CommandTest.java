@@ -122,7 +122,19 @@ public class CommandTest implements CommandExecutor {
 
 				if(cmd.getName().equalsIgnoreCase("teamSet")) {
 					List<Player> impostors = new ArrayList<Player>();
-					List<Player> crewMate = new ArrayList<Player>();
+					List<Player> crewMates = new ArrayList<Player>();
+					for(Player p : onlinePlayers) {
+						if (p.getScoreboardTags().contains("amongUs")) {
+							crewMates.add(p);
+						}
+					}
+					int numImpostor = (int)(Math.random() * (crewMates.size() + 1));
+					impostors.add(crewMates.get(numImpostor));
+					crewMates.remove(numImpostor);
+					numImpostor = (int)(Math.random() * (crewMates.size() + 1));
+					impostors.add(crewMates.get(numImpostor));
+					crewMates.remove(numImpostor);
+					}
 				}
 
 				//commande de test team
@@ -141,7 +153,6 @@ public class CommandTest implements CommandExecutor {
 
 			}
 
-		}
 		return false;
 	}
 }
