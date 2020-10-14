@@ -1,5 +1,8 @@
 package fr.charly.amongusmode.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,6 +15,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class CommandTest implements CommandExecutor {
 
+	public static List<Player> onlinePlayers = new ArrayList<Player>();
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
 
@@ -80,6 +85,22 @@ public class CommandTest implements CommandExecutor {
 			return true;
 		}
 
+		if(cmd.getName().equalsIgnoreCase("teamSet") && sender instanceof Player) {
+			List<Player> impostors = new ArrayList<Player>();
+			List<Player> crewMate = new ArrayList<Player>();
+			Player player = (Player)sender;
+
+			
+		}
+		//commande de test team
+		if(cmd.getName().equalsIgnoreCase("teamcheck")) {
+			Player player = (Player)sender;
+			if (onlinePlayers.contains(player))player.sendMessage("vous ête dans le tableau onlinePlayer");
+			else player.sendMessage("vous n'êtes pas dans le tableau OnlinePlayer");
+			return true;
+		}
+		
+		
 		else if(cmd.getName().equalsIgnoreCase("test")) {
 			sender.sendMessage("Bravo tu as réussi le test");
 			return true;

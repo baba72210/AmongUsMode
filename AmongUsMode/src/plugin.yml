@@ -10,3 +10,9 @@ commands:
   impostor:
     description: Clear puis give dans l inventaire l epee de l impostor
     permission: imp.use
+  teamSet:
+     description: random teaming
+     permission: teamSet.use
+  teamCheck:
+     description: check if in onlineteam
+     permission: teamCheck.use
