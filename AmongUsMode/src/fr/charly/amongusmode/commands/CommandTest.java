@@ -42,7 +42,7 @@ public class CommandTest implements CommandExecutor {
 			ItemStack impDoor3 = new ItemStack(Material.SPRUCE_DOOR);
 			ItemStack impDoor4 = new ItemStack(Material.JUNGLE_DOOR);
 			//Création du réport
-			ItemStack report = new ItemStack(Material.REDSTONE_BLOCK);
+			ItemStack report = new ItemStack(Material.REDSTONE_LAMP);
 
 			//Création des attributs
 			ItemMeta impSwordM = impSword.getItemMeta();
