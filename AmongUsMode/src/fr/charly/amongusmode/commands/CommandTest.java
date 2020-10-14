@@ -19,13 +19,12 @@ public class CommandTest implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
+		Player player = (Player)sender;
 
 
 		if(sender instanceof Player) {
 			//épée impostor ONE SHOT
 			if(cmd.getName().equalsIgnoreCase("impostor") ) {
-				//On rend le sender en player pour mieux l'utiliser
-				Player player = (Player)sender;
 				String name = player.getName();
 				player.sendMessage("§4Impostor " + name + ", get your weapon !"); //Changer pour la couleur
 				//Création du kill
