@@ -7,3 +7,6 @@ commands:
   test:
     description: ceci est un test
     permission: test.use
+  impostor:
+    description: Clear puis give dans l'inventaire l'épée de l'impostor
+    permission: imp.use
