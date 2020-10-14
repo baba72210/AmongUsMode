@@ -8,5 +8,5 @@ commands:
     description: ceci est un test
     permission: test.use   
   impostor:
-    description: Clear puis give dans l'inventaire l'épée de l'impostor
+    description: Clear puis give dans l inventaire l epee de l impostor
     permission: imp.use
