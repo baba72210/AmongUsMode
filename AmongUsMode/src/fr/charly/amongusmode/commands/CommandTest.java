@@ -123,7 +123,6 @@ public class CommandTest implements CommandExecutor {
 				if(cmd.getName().equalsIgnoreCase("teamSet")) {
 					List<Player> impostors = new ArrayList<Player>();
 					List<Player> crewMate = new ArrayList<Player>();
-					Player player = (Player)sender;
 				}
 
 				//commande de test team
