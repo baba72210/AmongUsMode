@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.charly.amongusmode.commands.CommandTest;
 
 public class Main extends JavaPlugin {
+
 	
 	/*
 	 * Messages au lancement et fin du plugin
@@ -13,11 +14,11 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		System.out.println("Le Serveur vient de s'allumer");
 		getCommand("test").setExecutor(new CommandTest());
+		getCommand("impostor").setExecutor(new CommandTest());
 	}
 	@Override
 	public void onDisable() {
 		System.out.println("Plug OFF");
 	}
-	
 	
 }
