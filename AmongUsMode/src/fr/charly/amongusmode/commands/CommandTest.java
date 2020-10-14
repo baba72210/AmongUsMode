@@ -34,7 +34,6 @@ public class CommandTest implements CommandExecutor {
 			return true;
 		}
 		
-		
 		sender.sendMessage("Bravo tu as réussi le test");
 		return false;
 	}
