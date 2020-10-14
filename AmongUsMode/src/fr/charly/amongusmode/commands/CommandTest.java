@@ -56,10 +56,42 @@ public class CommandTest implements CommandExecutor {
 				ItemMeta reportM = report.getItemMeta();
 
 				impSwordM.setUnbreakable(true);
+				impSwordM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
 				impSwordM.setDisplayName("§4KILL");
 				impSwordM.addEnchant(Enchantment.DAMAGE_ALL, 200, true);
 				impSwordM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-				impSwordM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				
+				impCommM.setUnbreakable(true);
+				impCommM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impCommM.setDisplayName("Communication");
+				
+				impReactM.setUnbreakable(true);
+				impReactM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impReactM.setDisplayName("Reactor");
+				
+				impLightM.setUnbreakable(true);
+				impLightM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impLightM.setDisplayName("Light");
+				
+				impDoor1M.setUnbreakable(true);
+				impDoor1M.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impDoor1M.setDisplayName("Lock Cafeteria");
+				
+				impDoor2M.setUnbreakable(true);
+				impDoor2M.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impDoor2M.setDisplayName("Lock Electrical");
+				
+				impDoor3M.setUnbreakable(true);
+				impDoor3M.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impDoor3M.setDisplayName("Lock Engine");
+				
+				impDoor4M.setUnbreakable(true);
+				impDoor4M.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				impDoor4M.setDisplayName("Lock Storage");
+				
+				reportM.setUnbreakable(true);
+				reportM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				reportM.setDisplayName("Report");
 				//Ajout des attributs
 				impSword.setItemMeta(impSwordM);
 				impComm.setItemMeta(impCommM);
