@@ -139,15 +139,15 @@ public class CommandTest implements CommandExecutor {
 			if(cmd.getName().equalsIgnoreCase("teamcheck")) {
 				player.sendMessage("OnlinePlayers:");
 				for(Player p : onlinePlayers) {
-					player.sendMessage(p.getName());
+					player.sendMessage("-"+p.getName());
 				}
 				player.sendMessage("impostors:");
 				for(Player p : impostors) {
-					player.sendMessage(p.getName());
+					player.sendMessage("-"+p.getName());
 				}
 				player.sendMessage("crewmates:");
 				for(Player p : crewMates) {
-					player.sendMessage(p.getName());
+					player.sendMessage("-"+p.getName());
 				}
 				//if(onlinePlayers.contains(player))player.sendMessage();
 				return true;

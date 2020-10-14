@@ -2,6 +2,7 @@ name: AmongUsMode
 main: fr.charly.amongusmode.Main
 author: Charly #Auteur du plugin
 version: 1.0 #Version du plugin
+api-version: 1.16
 dependecies: #de quel plugin il dependra, dans notre cas, nous n'allons utiliser aucun autre plugin...
 commands: 
   test:
