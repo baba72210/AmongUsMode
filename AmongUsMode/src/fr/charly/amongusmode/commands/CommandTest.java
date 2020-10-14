@@ -16,6 +16,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class CommandTest implements CommandExecutor {
 
 	public static List<Player> onlinePlayers = new ArrayList<Player>();
+	public static List<Player> impostors = new ArrayList<Player>();
+	public static List<Player> crewMates = new ArrayList<Player>();
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
@@ -119,8 +121,6 @@ public class CommandTest implements CommandExecutor {
 
 
 			if(cmd.getName().equalsIgnoreCase("teamSet")) {
-				List<Player> impostors = new ArrayList<Player>();
-				List<Player> crewMates = new ArrayList<Player>();
 				for(Player p : onlinePlayers) {
 					if (p.getScoreboardTags().contains("amongUs")) {
 						crewMates.add(p);
@@ -137,15 +137,24 @@ public class CommandTest implements CommandExecutor {
 
 		//commande de test team
 		if(cmd.getName().equalsIgnoreCase("teamcheck")) {
+			player.sendMessage("OnlinePlayers:");
 			for(Player p : onlinePlayers) {
-
+				player.sendMessage(p.getName());
+			}
+			player.sendMessage("impostors:");
+			for(Player p : impostors) {
+				player.sendMessage(p.getName());
+			}
+			player.sendMessage("crewmates:");
+			for(Player p : crewMates) {
+				player.sendMessage(p.getName());
 			}
 			return true;
 		}
 
 
-		else if(cmd.getName().equalsIgnoreCase("test")) {
-			sender.sendMessage("Bravo tu as réussi le test");
+		 if(cmd.getName().equalsIgnoreCase("test")) {
+			player.sendMessage("Bravo tu as réussi le test");
 			return true;
 		}
 
