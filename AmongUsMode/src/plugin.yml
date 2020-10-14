@@ -1,6 +1,4 @@
 name: AmongUsMode 
-author: Charly 
-version: 1.0 
 main: fr.charly.amongusmode.Main
 author: Charly #Auteur du plugin
 version: 1.0 #Version du plugin
