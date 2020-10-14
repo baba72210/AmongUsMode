@@ -36,14 +36,14 @@ public class CommandTest implements CommandExecutor {
 					//Création du sabotage du réacteur
 					ItemStack impReact = new ItemStack(Material.TNT);
 					//Création du sabotage des lights
-					ItemStack impLight = new ItemStack(Material.REDSTONE_TORCH);
+					ItemStack impLight = new ItemStack(Material.LEGACY_REDSTONE_TORCH_ON);
 					//Création du sabotage des portes
 					ItemStack impDoor1 = new ItemStack(Material.IRON_DOOR);
 					ItemStack impDoor2 = new ItemStack(Material.OAK_DOOR);
 					ItemStack impDoor3 = new ItemStack(Material.SPRUCE_DOOR);
 					ItemStack impDoor4 = new ItemStack(Material.JUNGLE_DOOR);
 					//Création du réport
-					ItemStack report = new ItemStack(Material.REDSTONE_LAMP);
+					ItemStack report = new ItemStack(Material.LEGACY_REDSTONE_LAMP_OFF);
 
 					//Création des attributs
 					ItemMeta impSwordM = impSword.getItemMeta();
