@@ -16,7 +16,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class CommandTest implements CommandExecutor {
 
 	public static List<Player> onlinePlayers = new ArrayList<Player>();
-	
+
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
 
@@ -27,7 +27,7 @@ public class CommandTest implements CommandExecutor {
 			Player player = (Player)sender;
 			String name = player.getName();
 			player.sendMessage("§4Impostor " + name + ", get your weapon !"); //Changer pour la couleur
-			
+
 			//Création du kill
 			ItemStack impSword = new ItemStack(Material.IRON_SWORD);
 			//Création du sabotage des communications
@@ -43,7 +43,7 @@ public class CommandTest implements CommandExecutor {
 			ItemStack impDoor4 = new ItemStack(Material.JUNGLE_DOOR);
 			//Création du réport
 			ItemStack report = new ItemStack(Material.REDSTONE_BLOCK);
-			
+
 			//Création des attributs
 			ItemMeta impSwordM = impSword.getItemMeta();
 			ItemMeta impCommM = impComm.getItemMeta();
@@ -54,7 +54,7 @@ public class CommandTest implements CommandExecutor {
 			ItemMeta impDoor3M = impDoor3.getItemMeta();
 			ItemMeta impDoor4M = impDoor4.getItemMeta();
 			ItemMeta reportM = report.getItemMeta();
-			
+
 			impSwordM.setUnbreakable(true);
 			impSwordM.setDisplayName("§4KILL");
 			impSwordM.addEnchant(Enchantment.DAMAGE_ALL, 200, true);
@@ -90,7 +90,7 @@ public class CommandTest implements CommandExecutor {
 			List<Player> crewMate = new ArrayList<Player>();
 			Player player = (Player)sender;
 
-			
+
 		}
 		//commande de test team
 		if(cmd.getName().equalsIgnoreCase("teamcheck")) {
@@ -99,8 +99,8 @@ public class CommandTest implements CommandExecutor {
 			else player.sendMessage("vous n'êtes pas dans le tableau OnlinePlayer");
 			return true;
 		}
-		
-		
+
+
 		else if(cmd.getName().equalsIgnoreCase("test")) {
 			sender.sendMessage("Bravo tu as réussi le test");
 			return true;
