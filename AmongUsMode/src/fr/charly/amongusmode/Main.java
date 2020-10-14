@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.charly.amongusmode.commands.CommandTest;
 
 public class Main extends JavaPlugin {
+
 	
 	/*
 	 * Messages au lancement et fin du plugin
@@ -20,4 +21,8 @@ public class Main extends JavaPlugin {
 		System.out.println("Plug OFF");
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/baba72210/AmongUsMode.git
 }
