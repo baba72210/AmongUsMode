@@ -115,11 +115,13 @@ public class CommandTest implements CommandExecutor {
 
 
 			if(cmd.getName().equalsIgnoreCase("teamSet")) {
+				//ajout dans les crewmates de tout les joueurs en ligne ayant le tag "amongUs"
 				for(Player p : onlinePlayers) {
 					if (p.getScoreboardTags().contains("amongUs")) {
 						crewMates.add(p);
 					}
 				}
+				//deplacement de deux players de la team crewmate a la team imposteur
 				int numImpostor = (int)(Math.random() * (crewMates.size()+1));
 				impostors.add(crewMates.get(numImpostor));
 				crewMates.remove(numImpostor);
@@ -143,7 +145,6 @@ public class CommandTest implements CommandExecutor {
 				for(Player p : crewMates) {
 					player.sendMessage("-"+p.getName());
 				}
-				//if(onlinePlayers.contains(player))player.sendMessage();
 				return true;
 			}
 
