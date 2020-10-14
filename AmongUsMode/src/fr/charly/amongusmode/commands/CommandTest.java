@@ -149,6 +149,7 @@ public class CommandTest implements CommandExecutor {
 				for(Player p : crewMates) {
 					player.sendMessage(p.getName());
 				}
+				//if(onlinePlayers.contains(player))player.sendMessage();
 				return true;
 			}
 
