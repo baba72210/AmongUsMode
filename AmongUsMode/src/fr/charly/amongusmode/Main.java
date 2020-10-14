@@ -16,5 +16,4 @@ public class Main extends JavaPlugin {
 		System.out.println("Plug OFF");
 	}
 	
-	
 }
