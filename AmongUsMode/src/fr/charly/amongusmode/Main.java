@@ -13,6 +13,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		System.out.println("Le Serveur vient de s'allumer");
 		getCommand("test").setExecutor(new CommandTest());
+		getCommand("impostor").setExecutor(new CommandTest());
 	}
 	@Override
 	public void onDisable() {
