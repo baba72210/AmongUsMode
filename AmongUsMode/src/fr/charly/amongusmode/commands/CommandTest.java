@@ -126,7 +126,7 @@ public class CommandTest implements CommandExecutor {
 						crewMates.add(p);
 					}
 				}
-				int numImpostor = (int)(Math.random() * crewMates.size()+1);
+				int numImpostor = (int)(Math.random() * (crewMates.size()+1));
 				impostors.add(crewMates.get(numImpostor));
 				crewMates.remove(numImpostor);
 				numImpostor = (int)(Math.random() * (crewMates.size() + 1));
