@@ -6,7 +6,6 @@ import fr.charly.amongusmode.commands.CommandTest;
 
 public class Main extends JavaPlugin {
 
-	
 	/*
 	 * Messages au lancement et fin du plugin
 	 */
