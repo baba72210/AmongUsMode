@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.boss.BossBar;
+import org.bukkit.boss.KeyedBossBar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -73,6 +75,9 @@ public class CommandTestcharly implements CommandExecutor {
 						rad+=2*Math.PI/12;
 					}
 				}
+				
+				BossBar b = null;
+				b.setTitle("");
 			}
 		}
 		return false;
