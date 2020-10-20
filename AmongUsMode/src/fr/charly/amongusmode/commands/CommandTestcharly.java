@@ -77,12 +77,12 @@ public class CommandTestcharly implements CommandExecutor {
 				double rad=-11* Math.PI/12;
 				TimerTask TimeVote = new TimerTask(120);
 				TimeVote.run();
+				for(Player p : PlayingAmongUs) {
+					p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
+					rad+=2*Math.PI/12;
+				}
 				BossBar b = Bukkit.createBossBar("",BarColor.BLUE ,BarStyle.SOLID);
 				while (TimeVote.isRunning()) {
-					for(Player p : PlayingAmongUs) {//pas opti car on regarde dans tout les joueurs co
-						p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
-						rad+=2*Math.PI/12;
-					}
 					b.setTitle("temps restant pour voter :"+TimeVote.getTime()+" secondes");
 					b.setVisible(true);
 				}
