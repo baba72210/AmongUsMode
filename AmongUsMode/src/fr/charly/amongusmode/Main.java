@@ -22,6 +22,7 @@ public class Main extends JavaPlugin {
 		getCommand("impostor").setExecutor(new CommandTest());
 		getCommand("teamCheck").setExecutor(new CommandTest());
 		getCommand("teamSet").setExecutor(new CommandTest());
+		getCommand("vote").setExecutor(new CommandTest());
 	}
 	@Override
 	public void onDisable() {
