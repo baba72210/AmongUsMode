@@ -3,6 +3,7 @@ package fr.charly.amongusmode.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -146,6 +147,17 @@ public class CommandTest implements CommandExecutor {
 					player.sendMessage("-"+p.getName());
 				}
 				return true;
+			}
+			
+			if(cmd.getName().equalsIgnoreCase("vote")) {
+				double rad=-11* Math.PI/12;
+				for(Player p : onlinePlayers) {
+					if (p.getScoreboardTags().contains("amongUs")) {
+						p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
+						rad+=2*Math.PI/12;
+					}
+				}
+				
 			}
 
 
