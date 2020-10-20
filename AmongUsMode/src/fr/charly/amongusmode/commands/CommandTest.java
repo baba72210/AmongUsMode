@@ -3,6 +3,8 @@ package fr.charly.amongusmode.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.text.html.parser.Entity;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -10,12 +12,16 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.*;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.entity.*;
 
 public class CommandTest implements CommandExecutor {
 
@@ -23,7 +29,7 @@ public class CommandTest implements CommandExecutor {
 	public static List<Player> impostors = new ArrayList<Player>();
 	public static List<Player> crewMates = new ArrayList<Player>();
 
-	@SuppressWarnings("deprecation")
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
 
@@ -119,6 +125,51 @@ public class CommandTest implements CommandExecutor {
 			}
 
 
+			if(cmd.getName().equalsIgnoreCase("teamSet")) {
+				//ajout dans les crewmates de tout les joueurs en ligne ayant le tag "amongUs"
+				for(Player p : onlinePlayers) {
+					if (p.getScoreboardTags().contains("amongUs")) {
+						crewMates.add(p);
+					}
+				}
+				//deplacement de deux players de la team crewmate a la team imposteur
+				int numImpostor = (int)(Math.random() * (crewMates.size()+1));
+				impostors.add(crewMates.get(numImpostor));
+				crewMates.remove(numImpostor);
+				numImpostor = (int)(Math.random() * (crewMates.size() + 1));
+				impostors.add(crewMates.get(numImpostor));
+				crewMates.remove(numImpostor);
+			}
+
+
+			//commande de test team
+			if(cmd.getName().equalsIgnoreCase("teamcheck")) {
+				player.sendMessage("OnlinePlayers:");
+				for(Player p : onlinePlayers) {
+					player.sendMessage("-"+p.getName());
+				}
+				player.sendMessage("impostors:");
+				for(Player p : impostors) {
+					player.sendMessage("-"+p.getName());
+				}
+				player.sendMessage("crewmates:");
+				for(Player p : crewMates) {
+					player.sendMessage("-"+p.getName());
+				}
+				//if(onlinePlayers.contains(player))player.sendMessage();
+				return true;
+			}
+			
+			if(cmd.getName().equalsIgnoreCase("vote")) {
+				double rad=-11* Math.PI/12;
+				for(Player p : onlinePlayers) {
+					if (p.getScoreboardTags().contains("amongUs")) {
+						p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
+						rad+=2*Math.PI/12;
+					}
+				}
+				
+			}
 
 
 			if(cmd.getName().equalsIgnoreCase("test")) {
@@ -127,9 +178,20 @@ public class CommandTest implements CommandExecutor {
 			}
 			
 			if(cmd.getName().equalsIgnoreCase("GoInVent")){
-				player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 9999,255),true);
+				
 			}
 		}
 		return false;
+	}
+	
+	@EventHandler
+	public void onInteract(PlayerInteractEntityEvent event) {
+		Player player = event.getPlayer();
+		org.bukkit.entity.Entity entity = event.getRightClicked();
+		if(entity.getType() == EntityType.MINECART) {
+			player.teleport(entity.getLocation());
+			player.setWalkSpeed(0);
+			player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 9999,255));
+		}
 	}
 }
