@@ -21,5 +21,9 @@ public class TimerTask extends BukkitRunnable {
 	public int getTime() {
 		return time;
 	}
+	
+	public boolean isRunning() {
+		return(time>0);
+	}
 
 }

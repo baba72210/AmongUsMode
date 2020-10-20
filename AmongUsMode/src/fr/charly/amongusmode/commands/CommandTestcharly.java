@@ -72,16 +72,18 @@ public class CommandTestcharly implements CommandExecutor {
 			if(cmd.getName().equalsIgnoreCase("vote")) {
 				double rad=-11* Math.PI/12;
 				TimerTask TimeVote = new TimerTask(120);
-				while 
-				for(Player p : onlinePlayers) {//pas opti car on regarde dans tout les joueurs co
-					if (p.getScoreboardTags().contains("amongUs")) {
-						p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
-						rad+=2*Math.PI/12;
+				TimeVote.run();
+				BossBar b = createBossBar();
+				while (TimeVote.isRunning()) {
+					for(Player p : onlinePlayers) {//pas opti car on regarde dans tout les joueurs co
+						if (p.getScoreboardTags().contains("amongUs")) {
+							p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
+							rad+=2*Math.PI/12;
+						}
 					}
+					b.setTitle("temps restant pour voter :"+TimeVote.getTime()+" secondes");
+					b.setVisible(true);
 				}
-				
-				BossBar b = null;
-				b.setTitle("");
 			}
 		}
 		return false;
