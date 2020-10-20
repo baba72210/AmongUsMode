@@ -6,6 +6,7 @@ import org.bukkit.GameRule;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.charly.amongusmode.commands.CommandTest;
+import fr.charly.amongusmode.commands.CommandTestcharly;
 import fr.charly.amongusmode.events.PlayerJoin;
 
 public class Main extends JavaPlugin {
@@ -20,8 +21,9 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new PlayerJoin(),this);
 		getCommand("test").setExecutor(new CommandTest());
 		getCommand("impostor").setExecutor(new CommandTest());
-		getCommand("teamCheck").setExecutor(new CommandTest());
-		getCommand("teamSet").setExecutor(new CommandTest());
+		getCommand("teamCheck").setExecutor(new CommandTestcharly());
+		getCommand("teamSet").setExecutor(new CommandTestcharly());
+		getCommand("vote").setExecutor(new CommandTestcharly());
 	}
 	@Override
 	public void onDisable() {

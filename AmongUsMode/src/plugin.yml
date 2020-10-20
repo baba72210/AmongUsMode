@@ -20,3 +20,6 @@ commands:
   GoInVent:
     description: envoie le joueur dans la vent et lui permet de changer de vent pour sortir ailleurs
     permission: GoInVent.use
+  vote:
+    description: start the vote sequence
+    permission: Vote.use

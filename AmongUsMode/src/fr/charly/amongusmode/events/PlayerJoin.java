@@ -6,7 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import fr.charly.amongusmode.commands.CommandTest;
+import fr.charly.amongusmode.commands.CommandTestcharly;
 
 public class PlayerJoin implements Listener {
 	
@@ -16,7 +16,7 @@ public class PlayerJoin implements Listener {
 		
 		e.setJoinMessage("Bienvenue sur le serveur");
 		
-		CommandTest.onlinePlayers.add(p);
+		CommandTestcharly.onlinePlayers.add(p);
 		
 		//Ne peut pas prendre d'item
 		p.setCanPickupItems(false);
@@ -32,7 +32,7 @@ public class PlayerJoin implements Listener {
 	public void onLeave(PlayerQuitEvent e) {
 		Player p = (Player) e.getPlayer();
 		
-		CommandTest.onlinePlayers.remove(p);
+		CommandTestcharly.onlinePlayers.remove(p);
 	}
 	
 		
