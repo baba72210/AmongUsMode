@@ -19,6 +19,8 @@ import org.bukkit.*;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import tasks.TimerTask;
+
 public class CommandTestcharly implements CommandExecutor {
 
 	public static List<Player> onlinePlayers = new ArrayList<Player>();
@@ -69,7 +71,7 @@ public class CommandTestcharly implements CommandExecutor {
 
 			if(cmd.getName().equalsIgnoreCase("vote")) {
 				double rad=-11* Math.PI/12;
-				TimerTask TimeVote
+				TimerTask TimeVote = new TimerTask(120);
 				while 
 				for(Player p : onlinePlayers) {//pas opti car on regarde dans tout les joueurs co
 					if (p.getScoreboardTags().contains("amongUs")) {
