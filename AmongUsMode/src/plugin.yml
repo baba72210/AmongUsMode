@@ -17,3 +17,6 @@ commands:
   teamCheck:
      description: check if in onlineteam
      permission: teamCheck.use
+  GoInVent:
+    description: envoie le joueur dans la vent et lui permet de changer de vent pour sortir ailleurs
+    permission: GoInVent.use

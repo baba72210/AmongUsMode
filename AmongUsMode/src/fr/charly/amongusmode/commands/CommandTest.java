@@ -12,6 +12,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.*;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class CommandTest implements CommandExecutor {
 
@@ -19,6 +22,7 @@ public class CommandTest implements CommandExecutor {
 	public static List<Player> impostors = new ArrayList<Player>();
 	public static List<Player> crewMates = new ArrayList<Player>();
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {
 
@@ -151,6 +155,10 @@ public class CommandTest implements CommandExecutor {
 			if(cmd.getName().equalsIgnoreCase("test")) {
 				player.sendMessage("Bravo tu as réussi le test");
 				return true;
+			}
+			
+			if(cmd.getName().equalsIgnoreCase("GoInVent")){
+				player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 9999,255),true);
 			}
 		}
 		return false;
