@@ -56,7 +56,7 @@ public class CommandTestcharly implements CommandExecutor {
 
 
 			//commande de test team
-			if(cmd.getName().equalsIgnoreCase("vote")) {
+			if(cmd.getName().equalsIgnoreCase("teamcheck")) {
 				player.sendMessage("OnlinePlayers:");
 				for(Player p : onlinePlayers) {
 					player.sendMessage("-"+p.getName());
