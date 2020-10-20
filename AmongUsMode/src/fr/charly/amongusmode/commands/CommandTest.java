@@ -19,10 +19,6 @@ import org.bukkit.potion.PotionEffectType;
 
 public class CommandTest implements CommandExecutor {
 
-	public static List<Player> onlinePlayers = new ArrayList<Player>();
-	public static List<Player> impostors = new ArrayList<Player>();
-	public static List<Player> crewMates = new ArrayList<Player>();
-
 	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] arg3) {

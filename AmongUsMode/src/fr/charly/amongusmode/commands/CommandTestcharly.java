@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.boss.KeyedBossBar;
 import org.bukkit.command.Command;
@@ -24,6 +26,7 @@ import tasks.TimerTask;
 public class CommandTestcharly implements CommandExecutor {
 
 	public static List<Player> onlinePlayers = new ArrayList<Player>();
+	public static List<Player> PlayingAmongUs = new ArrayList<Player>();
 	public static List<Player> impostors = new ArrayList<Player>();
 	public static List<Player> crewMates = new ArrayList<Player>();
 
@@ -39,6 +42,7 @@ public class CommandTestcharly implements CommandExecutor {
 				for(Player p : onlinePlayers) {
 					if (p.getScoreboardTags().contains("amongUs")) {
 						crewMates.add(p);
+						PlayingAmongUs.add(p);
 					}
 				}
 				//deplacement de deux players de la team crewmate a la team imposteur
@@ -73,13 +77,11 @@ public class CommandTestcharly implements CommandExecutor {
 				double rad=-11* Math.PI/12;
 				TimerTask TimeVote = new TimerTask(120);
 				TimeVote.run();
-				BossBar b = createBossBar();
+				BossBar b = Bukkit.createBossBar("",BarColor.BLUE ,BarStyle.SOLID);
 				while (TimeVote.isRunning()) {
-					for(Player p : onlinePlayers) {//pas opti car on regarde dans tout les joueurs co
-						if (p.getScoreboardTags().contains("amongUs")) {
-							p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
-							rad+=2*Math.PI/12;
-						}
+					for(Player p : PlayingAmongUs) {//pas opti car on regarde dans tout les joueurs co
+						p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
+						rad+=2*Math.PI/12;
 					}
 					b.setTitle("temps restant pour voter :"+TimeVote.getTime()+" secondes");
 					b.setVisible(true);
