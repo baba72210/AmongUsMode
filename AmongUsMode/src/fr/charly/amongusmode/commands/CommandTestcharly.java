@@ -69,7 +69,9 @@ public class CommandTestcharly implements CommandExecutor {
 
 			if(cmd.getName().equalsIgnoreCase("vote")) {
 				double rad=-11* Math.PI/12;
-				for(Player p : onlinePlayers) {
+				TimerTask TimeVote
+				while 
+				for(Player p : onlinePlayers) {//pas opti car on regarde dans tout les joueurs co
 					if (p.getScoreboardTags().contains("amongUs")) {
 						p.teleport(new Location(p.getWorld(), 4*Math.sin(rad), 4*Math.cos(rad), 10));
 						rad+=2*Math.PI/12;
